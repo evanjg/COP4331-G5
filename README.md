@@ -3,12 +3,10 @@ Table of Contents
 ---------------------
 
 - Backlog
-
 - UserStories
-
 - VisionStatement
-
 - COP4331-G5-Game
+- Current UML Diagram
 
 Current Status
 ---------------
