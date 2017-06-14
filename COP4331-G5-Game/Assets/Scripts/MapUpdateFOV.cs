@@ -10,7 +10,8 @@ public class MapUpdateFOV : MonoBehaviour
 {
 	public GameObject player;
 
-   	public MapController mapController;
+	[SerializeField]
+	MapController mapController;
     private Camera camera;
 
     [SerializeField]
@@ -22,17 +23,20 @@ public class MapUpdateFOV : MonoBehaviour
     Vector3 cameraTarget;
     Vector2 cachedTile;
     Vector2 currentTile;
-	int count = 0;
+
 
     void Start()
     {
-        mapController = GetComponent<MapController>();
         camera = Camera.main;
         yPlane = new Plane(Vector3.up, Vector3.zero);
     }
 
     void Update()
     {
+		if (MapController.ReferenceTileRect == null)
+		{
+			return;
+		}
 		ray = camera.ViewportPointToRay (new Vector3 (0.5f, 0.5f, 0));
 		if (yPlane.Raycast (ray, out hitDistance)) {
 			cameraTarget = ray.GetPoint (hitDistance) / MapController.WorldScaleFactor;

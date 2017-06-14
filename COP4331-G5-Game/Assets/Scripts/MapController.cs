@@ -23,10 +23,15 @@ public class MapController : MonoBehaviour
 
 	public Text countText;
 
-    [Geocode]
-	public string LatLng;
+
+
+	public double currentLat = 0;
+	public double currentLong = 0;
+
     public int Zoom;
     public Vector4 Range;
+
+
 
     private GameObject root;
     private Dictionary<Vector2, UnityTile> tiles;
@@ -48,43 +53,17 @@ public class MapController : MonoBehaviour
 
     public void Start()
     {
-		Execute ();
+		
     }
 
-    /// <summary>
-    /// Pulls the root world object to origin for ease of use/view
-    /// </summary>
     public void Update()
     {
-        if (snapYToZero)
-        {
-            var ray = new Ray(new Vector3(0, 1000, 0), Vector3.down);
-            RaycastHit rayhit;
-            if (Physics.Raycast(ray, out rayhit))
-            {
-                root.transform.position = new Vector3(0, -rayhit.point.y, 0);
-                snapYToZero = false;
-            }
-        }
+		
     }
 
-    public void Execute()
-    {
-        var parm = LatLng.Split(',');
-
-       	Execute(double.Parse(parm[0]), double.Parse(parm[1]), Zoom, Range);
-    }
-
-    /// <summary>
-    /// World creation call used in the demos. Destroys and existing worlds and recreates another one. 
-    /// </summary>
-    /// <param name="lat">Latitude of the requested point</param>
-    /// <param name="lng">Longitude of the requested point</param>
-    /// <param name="zoom">Zoom/Detail level of the world</param>
-    /// <param name="frame">Tiles to load around central tile in each direction; west-north-east-south</param>
+    // Initial Map Setup
     public void Execute(double lat, double lng, int zoom, Vector4 frame)
     {
-		var parm = LatLng.Split(',');
         //frame goes left-top-right-bottom here
         if (root != null)
         {
@@ -102,28 +81,18 @@ public class MapController : MonoBehaviour
         WorldScaleFactor = (float)(TileSize / ReferenceTileRect.Size.x);
         root.transform.localScale = Vector3.one * WorldScaleFactor;
 
-		Debug.Log(double.Parse(parm[0]).ToString() + ", " + double.Parse(parm[1]).ToString());
-
-		if (count < MaxTile && !(double.Parse(parm[0]) == 28.548982 && double.Parse(parm[1]) == -81.372986)) {
-
-			for (int i = (int)(tms.x - frame.x); i <= (tms.x + frame.z); i++) {
-				for (int j = (int)(tms.y - frame.y); j <= (tms.y + frame.w); j++) {
-					var tile = new GameObject ("Tile - " + i + " | " + j).AddComponent<UnityTile> ();
-					tiles.Add (new Vector2 (i, j), tile);
-					tile.Zoom = zoom;
-					tile.RelativeScale = Conversions.GetTileScaleInMeters (0, Zoom) / Conversions.GetTileScaleInMeters ((float)lat, Zoom);
-					tile.TileCoordinate = new Vector2 (i, j);
-					tile.Rect = Conversions.TileBounds (tile.TileCoordinate, zoom);
-					tile.transform.position = new Vector3 ((float)(tile.Rect.Center.x - ReferenceTileRect.Center.x), 0, (float)(tile.Rect.Center.y - ReferenceTileRect.Center.y));
-					tile.transform.SetParent (root.transform, false);
-					MapVisualization.ShowTile (tile);
-					count++;
-				}
-			}
-			Debug.Log ("Tile count: " + count);
-			countText.text = count.ToString ();
-		}
+		pullRootDown();
     }
+
+	/// Pulls the root world object to origin for ease of use/view
+	private void pullRootDown()
+	{
+		var ray = new Ray(new Vector3(0, 1000, 0), Vector3.down);
+		RaycastHit rayhit;
+		if (Physics.Raycast (ray, out rayhit)) {
+			root.transform.position = new Vector3 (0, -rayhit.point.y, 0);
+		}
+	}
 
     public void Execute(double lat, double lng, int zoom, Vector2 frame)
     {
@@ -142,8 +111,8 @@ public class MapController : MonoBehaviour
     /// <param name="zoom">Zoom/Detail level of the requested tile</param>
     public void Request(Vector2 pos, int zoom)
     {
-		var parm = LatLng.Split(',');
-		if (!tiles.ContainsKey(pos) && (count < MaxTile) && !(double.Parse(parm[0]) == 28.548982 && double.Parse(parm[1]) == -81.372986))
+		
+		if (!tiles.ContainsKey(pos) && (count < MaxTile))
         {
             var tile = new GameObject("Tile - " + pos.x + " | " + pos.y).AddComponent<UnityTile>();
             tiles.Add(pos, tile);
@@ -151,14 +120,10 @@ public class MapController : MonoBehaviour
             tile.Zoom = zoom;
             tile.TileCoordinate = new Vector2(pos.x, pos.y);
             tile.Rect = Conversions.TileBounds(tile.TileCoordinate, zoom);
-            tile.RelativeScale = Conversions.GetTileScaleInMeters(0, Zoom) /
-                Conversions.GetTileScaleInMeters((float)Conversions.MetersToLatLon(tile.Rect.Center).x, Zoom);
-            tile.transform.localPosition = new Vector3((float)(tile.Rect.Center.x - ReferenceTileRect.Center.x),
-                                                       0,
-                                                       (float)(tile.Rect.Center.y - ReferenceTileRect.Center.y));
+            tile.RelativeScale = Conversions.GetTileScaleInMeters(0, Zoom) / Conversions.GetTileScaleInMeters((float)Conversions.MetersToLatLon(tile.Rect.Center).x, Zoom);
+            tile.transform.localPosition = new Vector3((float)(tile.Rect.Center.x - ReferenceTileRect.Center.x), 0, (float)(tile.Rect.Center.y - ReferenceTileRect.Center.y));
             MapVisualization.ShowTile(tile);
 			Debug.Log ("Tile count: " + ++count);
-			countText.text = count.ToString ();
         }
     }
 }

@@ -3,6 +3,8 @@ using Mapbox.Unity.Utilities;
 using Mapbox.Unity.MeshGeneration;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+
 public class PositionWithLocationProvider : MonoBehaviour
 {
     /// <summary>
@@ -22,6 +24,7 @@ public class PositionWithLocationProvider : MonoBehaviour
 
 	public bool firstTimePositionUpdate = false;
 	public MapController mapController;
+
     /// <summary>
     /// The location provider.
     /// This is public so you change which concrete <see cref="T:Mapbox.Unity.Location.ILocationProvider"/> to use at runtime.
@@ -79,20 +82,27 @@ public class PositionWithLocationProvider : MonoBehaviour
         targetPosition = Conversions.GeoToWorldPosition(e.Location,
                                                          MapController.ReferenceTileRect.Center, 
                                                          MapController.WorldScaleFactor).ToVector3xz();
-	}
 
-	void Update()
+	}
+	public void Update()
 	{
-		//TODO: Needs more work
-		// If it is the first time getting the device position, jump to location instead of 'gliding' to it.
+		// Not needed, but keeping just in case.
+		/*
 		if (!firstTimePositionUpdate) {
+			
 			transform.position = targetPosition;
-			firstTimePositionUpdate = true;
-		} 
-		else {
-			transform.position = targetPosition;
-			//transform.position = Vector3.Lerp (transform.position, targetPosition, Time.deltaTime * positionFollowFactor);
+
+			// Until device position is correct, keep jumping to the location instead of 'gliding' to it.
+			if(Time.fixedTime > 5)
+				firstTimePositionUpdate = true;     
 		}
+		else {
+			transform.position = Vector3.Lerp (transform.position, targetPosition, Time.deltaTime * positionFollowFactor);
+		}*/
+
+
+		transform.position = Vector3.Lerp (transform.position, targetPosition, Time.deltaTime * positionFollowFactor);
+
 		// Keep player on the ground
 		transform.position = new Vector3(transform.position.x, 0, transform.position.z);
 	}

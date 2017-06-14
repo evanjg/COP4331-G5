@@ -1,5 +1,4 @@
-{
-	"points-of-interest": [
+[
 		{
 			"id": 0,
 			"latitude": 0.000000,
@@ -16,8 +15,8 @@
 		},
 		{
 			"id": 2,
-			"latitude": 28.602936,
-			"longitude": -81.2001925,
+			"latitude": 28.603567,
+			"longitude": -81.199450,
 			"name": "Memory Mall",
 			"description": "Veteran's memorial at UCF's Memory Mall"
 		},
@@ -182,7 +181,4 @@
 			"name": "",
 			"description": ""
 		},
-
-
 	]
-}

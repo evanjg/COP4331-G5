@@ -12,6 +12,7 @@ public class BuildMapAtLocation : MonoBehaviour
     MapController mapController;
 
 
+	private bool isCorrectLocation = false;
 
     ILocationProvider _locationProvider;
     ILocationProvider LocationProvider
@@ -37,7 +38,13 @@ public class BuildMapAtLocation : MonoBehaviour
     {
         LocationProvider.OnLocationUpdated -= LocationProvider_OnLocationUpdated;
 
-        mapController.LatLng = string.Format("{0}, {1}", e.Location.x, e.Location.y);
-        mapController.enabled = true;
+		mapController.currentLat = e.Location.x;
+		mapController.currentLong = e.Location.y;
+
+		mapController.enabled = true;
+		if (!(mapController.currentLat == 0 && mapController.currentLong == 0) && !isCorrectLocation) {
+			mapController.Execute (mapController.currentLat, mapController.currentLong, mapController.Zoom, mapController.Range);
+			isCorrectLocation = true;
+		}
     }
 }
