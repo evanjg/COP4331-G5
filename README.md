@@ -12,6 +12,9 @@ Table of Contents
 - COP4331-G5-Game
 - Current UML Diagram
 - Current Build Screen Shots
+  - SU.png
+  - default.png
+- Link to the code: https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts
 
 Current Status
 ---------------
