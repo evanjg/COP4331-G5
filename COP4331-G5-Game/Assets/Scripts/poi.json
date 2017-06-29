@@ -11,7 +11,7 @@
 			"latitude": 28.602228,
 			"longitude": -81.193998,
 			"name": "Timothy R. Newman Nature Pavilion",
-			"description": "Pavilion at UCF Arboretum."
+			"description": "Pavilion at UCF Arboretum.Increases Strength."
 		},
 		{
 			"id": 2,
@@ -32,14 +32,14 @@
 			"latitude": 28.6010649,
 			"longitude": -81.1984367,
 			"name": "HEC Courtyard",
-			"description": "Harris Engineering Corporation Center courtyard"
+			"description": "Harris Engineering Corporation Center courtyard. Increases Intelligence."
 		},
 		{
 			"id": 5,
 			"latitude": 28.5999628,
 			"longitude": -81.199177,
 			"name": "Chemistry Garden",
-			"description": "Chemistry building outdoor seating area"
+			"description": "Chemistry building outdoor seating area. Increases Intelligence."
 		},
 		{
 			"id": 6,
@@ -168,11 +168,11 @@
 			"description": "CB1 seating area"
 		},
 		{
-			"id": 0,
-			"latitude": 0.000000,
-			"longitude": 0.000000,
-			"name": "",
-			"description": ""
+			"id": 24,
+			"latitude": 28.60784,
+			"longitude": -81.197406,
+			"name": "Ticket Center",
+			"description": "Ticket Center at Knights Plaza"
 		},
 		{
 			"id": 0,
