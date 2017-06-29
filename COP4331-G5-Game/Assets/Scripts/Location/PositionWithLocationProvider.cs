@@ -15,6 +15,8 @@ public class PositionWithLocationProvider : MonoBehaviour
 
 	public GameObject player;
 
+    public Text t;
+
     /// <summary>
     /// Use a mock <see cref="T:Mapbox.Unity.Location.TransformLocationProvider"/>,
     /// rather than a <see cref="T:Mapbox.Unity.Location.EditorLocationProvider"/>. 
@@ -23,7 +25,6 @@ public class PositionWithLocationProvider : MonoBehaviour
     bool useTransformLocationProvider;
 
 	public bool firstTimePositionUpdate = false;
-	public MapController mapController;
 
     /// <summary>
     /// The location provider.
@@ -57,7 +58,7 @@ public class PositionWithLocationProvider : MonoBehaviour
 	}
 
 	Vector3 targetPosition;
-
+    private int count = 0;
 	void Start()
 	{
 		LocationProvider.OnLocationUpdated += LocationProvider_OnLocationUpdated;
@@ -77,7 +78,9 @@ public class PositionWithLocationProvider : MonoBehaviour
         {
             return;
         }
-		//t.text = e.Location.ToString ();
+
+		t.text = count.ToString();
+	    count++;
 
         targetPosition = Conversions.GeoToWorldPosition(e.Location,
                                                          MapController.ReferenceTileRect.Center, 

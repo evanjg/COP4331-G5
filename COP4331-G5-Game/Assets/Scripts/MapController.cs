@@ -23,9 +23,9 @@ public class MapController : MonoBehaviour
 
 	public Text countText;
 
-
-
+    [HideInInspector]
 	public double currentLat = 0;
+    [HideInInspector]
 	public double currentLong = 0;
 
     public int Zoom;
