@@ -27,3 +27,5 @@ Current Status
 - Camera Follow and Rotation
 - Player Orientation
 - Add new POI changes to this one: https://github.com/evanjg/COP4331-G5/blob/master/COP4331-G5-Game/Assets/Scripts/poi.json
+
+Demo: https://youtu.be/b7cYOrRGSyY
