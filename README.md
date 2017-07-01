@@ -28,4 +28,4 @@ Current Status
 - Player Orientation
 - Add new POI changes to this one: https://github.com/evanjg/COP4331-G5/blob/master/COP4331-G5-Game/Assets/Scripts/poi.json
 
-Demo: https://youtu.be/b7cYOrRGSyY
+Demo: https://www.youtube.com/playlist?list=PL6pzVrEKfi_m_qbbruo5mo5YNXqyIHkTR
