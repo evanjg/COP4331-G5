@@ -18,7 +18,7 @@ Table of Contents
 - VisionStatement
 - Avatar Rendering (Sprint 2 Update)
 - COP4331-G5-Game (Sprint 2 Update)
-- Current UML Diagram (Sprint 2 Update)
+- Current UML Diagram [Here](https://github.com/evanjg/COP4331-G5/blob/master/GameUML.jpg) (Sprint 2 Update)
 - Link to the code: https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts
 - Links to Testing: ["Geo-Fence" Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Unit%20Tests) , [Inventory System Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts/InventorySystem/Test) , [Avatar Rendering Test](https://github.com/evanjg/COP4331-G5/blob/master/Avatar%20Rendering/Assets/scripts/Testing.cs)
 
