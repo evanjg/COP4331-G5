@@ -12,7 +12,8 @@ Table of Contents
 - GameDesignIdeas
 - UserStories
 - VisionStatement
-- COP4331-G5-Game
+- Avatar Rendering (Sprint 2 Update)
+- COP4331-G5-Game (Sprint 2 Update)
 - Current UML Diagram (Sprint 2 Update)
 - Link to the code: https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts
 
