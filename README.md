@@ -21,6 +21,7 @@ Table of Contents
 - Current UML Diagram (Sprint 2 Update)
 - Link to the code: https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts
 - Links to Testing: ["Geo-Fence" Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Unit%20Tests) , [Inventory System Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts/InventorySystem/Test) , [Avatar Rendering Test](https://github.com/evanjg/COP4331-G5/blob/master/Avatar%20Rendering/Assets/scripts/Testing.cs)
+
 Current Status
 ---------------
 
