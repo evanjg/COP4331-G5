@@ -1,4 +1,8 @@
 # COP4331-G5
+
+For Sprint 2 Demo Videos: https://www.youtube.com/playlist?list=PL6pzVrEKfi_m_qbbruo5mo5YNXqyIHkTR
+
+
 Table of Contents
 ---------------------
 
@@ -31,5 +35,3 @@ Current Status
 - Stats and Level System (Sprint 2 Update)
 - Inventory System (Sprint 2 Update)
 - Add new POI changes to this one: https://github.com/evanjg/COP4331-G5/blob/master/COP4331-G5-Game/Assets/Scripts/poi.json
-
-For Sprint 2 Demo Videos: https://www.youtube.com/playlist?list=PL6pzVrEKfi_m_qbbruo5mo5YNXqyIHkTR
