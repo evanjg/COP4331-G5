@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
-public class Hit : MonoBehaviour {
+public class Hit : MonoBehaviour
+{
 
+   
 	// Use this for initialization
 	void Start () {
 		
@@ -17,8 +20,15 @@ public class Hit : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
-                Destroy(hit.transform.gameObject);
+                if (hit.transform.gameObject.transform.localScale.x > 1)
+                {
+                    Destroy(hit.transform.gameObject);
+                }
             }
         }
 	}
+
+    
+
+    
 }

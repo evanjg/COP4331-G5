@@ -9,9 +9,7 @@ public class Move : MonoBehaviour {
 
 	public float TurnSpeed = 100f;
 
-	[HideInInspector]
-	private double lastCompassTime = 0;
-
+	
 	private Vector3 moveDirection = Vector3.zero;
 	public CharacterController controller;
 	public Compass compass = new Compass();
@@ -34,14 +32,12 @@ public class Move : MonoBehaviour {
 		moveDirection = transform.TransformDirection(moveDirection);
 		moveDirection *= speed;
 
-		double currentCompassTime = Input.compass.timestamp;
+		
 
 		// Rotates the player to face the direction of the phone
-		if (lastCompassTime + 10 <= currentCompassTime) {
-			lastCompassTime = currentCompassTime;
-			player.transform.rotation = Quaternion.Euler (0,180+Input.compass.magneticHeading, 0);
-		}
-
+        player.transform.rotation = Quaternion.Lerp(player.transform.rotation,
+	        Quaternion.Euler(0, 180 + Input.compass.magneticHeading, 0), Time.deltaTime*0.5f);
+        
 		// For Testing only: Rotates the player using the 'n' and 'm' keys
 		if(Input.GetKey(KeyCode.N)) {
 			player.transform.Rotate (0, -TurnSpeed*Time.deltaTime , 0);

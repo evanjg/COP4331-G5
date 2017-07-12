@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Configuration;
 using Mapbox.Utils;
+using NUnit.Framework;
 using UnityEngine;
 
 namespace AssemblyCSharp
@@ -15,9 +16,32 @@ namespace AssemblyCSharp
 		public string description;
 	    public int timeSinceVisited = 0;
 
+	    private bool isScaled = false;
+	    private GameObject crateGO;
+
 		public GeoPoint ()
 		{
 		}
+
+        public bool getScaled()
+        {
+            return isScaled;
+        }
+
+        public void setScaled(bool scaled)
+        {
+            isScaled = scaled;
+        }
+
+	    public GameObject getCrate()
+	    {
+	        return crateGO;
+	    }
+
+	    public void setCrate(GameObject crate)
+	    {
+	        crateGO = crate;
+	    }
 
 	    public bool BoundingCircle(double targetLat, double targetLong, double CircleSize)
 	    {

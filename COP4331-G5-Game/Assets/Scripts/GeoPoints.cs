@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Configuration;
 using Mapbox.Map;
 using UnityEngine;
 using Mapbox.Unity.MeshGeneration;
@@ -18,19 +19,22 @@ public class GeoPoints : MonoBehaviour {
 	public TextAsset geoPointsText;
 	public Text t;
 
+    public int timeSpanInSeconds;
 	[HideInInspector]
 	private List<GeoPoint> points;
 
 	GameObject player;
     public GameObject prefab;
 
-    private int minutesSinceEpoch;
+    private int secondsSinceEpoch;
+
 
 	void Start () {
 		player = GameObject.FindWithTag ("Player");
 
         readJsonFile();
         Debug.Log(Application.persistentDataPath + @"/POI.json");
+        
 	}
 
     void readJsonFile()
@@ -72,24 +76,49 @@ public class GeoPoints : MonoBehaviour {
         }
     }
 
+    void CheckCrates()
+    {
+        foreach (GeoPoint geoPoint in points)
+        {
+            if (geoPoint.getCrate() == null && geoPoint.getScaled())
+            {
+                geoPoint.setScaled(false);
+                geoPoint.timeSinceVisited = getSeconds() + timeSpanInSeconds;
+                writeJsonFile();
+            }
+            if (geoPoint.getCrate() == null && (geoPoint.timeSinceVisited <= secondsSinceEpoch))
+            {
+                Vector3 cratePosition =
+                    Conversions.GeoToWorldPosition(geoPoint.latitude, geoPoint.longitude,
+                        MapController.ReferenceTileRect.Center, MapController.WorldScaleFactor)
+                        .ToVector3xz();
+                GameObject crate = Instantiate(prefab, cratePosition + new Vector3(0, 10, 0), Quaternion.identity);
+                geoPoint.setCrate(crate);
+            }
+            
+        }
+    }
+
+
 	void Update () {
 
 	    if (MapController.ReferenceTileRect == null)
 	    {
 	        return;
 	    }
-
+	   
         
-        minutesSinceEpoch = getMinutes();
+        secondsSinceEpoch = getSeconds();
 
+        CheckCrates();
 	    CheckPlayerPostion();
 
 	}
 
-    private int getMinutes()
+    private int getSeconds()
     {
         TimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);
-        return (int)t.TotalMinutes;
+        return (int)t.TotalSeconds;
     }
 
 
@@ -97,20 +126,45 @@ public class GeoPoints : MonoBehaviour {
     {
         Vector2d playerLatLongPosition = player.transform.GetGeoPosition(MapController.ReferenceTileRect.Center, MapController.WorldScaleFactor);
 
-        // If player is within a distance of 50 feet away from the point, change player color to blue.
+        // If player is within a distance of 50 feet away from the point, scale the player up.
         foreach (GeoPoint geoPoint in points)
         {
-            if (geoPoint.BoundingCircle(playerLatLongPosition.x,playerLatLongPosition.y,50) && (geoPoint.timeSinceVisited <= minutesSinceEpoch))
+            // Check if player is in the bounding circle.
+            bool isInBoundingCircle = geoPoint.BoundingCircle(playerLatLongPosition.x, playerLatLongPosition.y, 50);
+
+            // If the player is in the circle, scale the crate up.
+            if (!geoPoint.getScaled() && isInBoundingCircle && (geoPoint.timeSinceVisited <= secondsSinceEpoch))
             {
-                
-                Vector3 cratePosition =
-                    Conversions.GeoToWorldPosition(geoPoint.latitude, geoPoint.longitude, MapController.ReferenceTileRect.Center,MapController.WorldScaleFactor)
-                        .ToVector3xz();
-                Instantiate(prefab, cratePosition + new Vector3(0, 10, 0), Quaternion.identity);
-                geoPoint.timeSinceVisited = getMinutes() + 5;
-                writeJsonFile();
+                geoPoint.setScaled(true);
+
+                StartCoroutine(ScaleCrateUp(geoPoint.getCrate()));
                 break;
             }
+            // If the crate is scaled and the player left the bounding circle, scale the crate down.
+            if (geoPoint.getScaled() && !isInBoundingCircle && geoPoint.getCrate() != null)
+            {
+                geoPoint.setScaled(false);
+                StartCoroutine(ScaleCrateDown(geoPoint.getCrate()));
+            }
+        }
+    }
+    IEnumerator ScaleCrateUp(GameObject crate)
+    {
+        while (crate.transform.localScale.x <= 2)
+        {
+            crate.transform.localScale += new Vector3(2 * Time.deltaTime, 2 * Time.deltaTime, 2 * Time.deltaTime);
+            crate.transform.position += new Vector3(0, 1 * Time.deltaTime, 0);
+            yield return null;
+        }
+    }
+    IEnumerator ScaleCrateDown(GameObject crate)
+    {
+        
+        while (crate.transform.localScale.x >= 1)
+        {
+            crate.transform.localScale -= new Vector3(2 * Time.deltaTime, 2 * Time.deltaTime, 2 * Time.deltaTime);
+            crate.transform.position -= new Vector3(0, 1 * Time.deltaTime, 0);
+            yield return null;
         }
     }
 }

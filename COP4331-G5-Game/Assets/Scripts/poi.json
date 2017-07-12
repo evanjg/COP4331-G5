@@ -1,186 +1,194 @@
 [
-		{
-			"id": 0,
-			"latitude": 0.000000,
-			"longitude": 0.000000,
-			"name": "",
-			"description": ""
-		},
-		{
-			"id": 1,
-			"latitude": 28.602228,
-			"longitude": -81.193998,
-			"name": "Timothy R. Newman Nature Pavilion",
-			"description": "Pavilion at UCF Arboretum.Increases Strength."
-		},
-		{
-			"id": 2,
-			"latitude": 28.603567,
-			"longitude": -81.199450,
-			"name": "Memory Mall",
-			"description": "Veteran's memorial at UCF's Memory Mall"
-		},
-		{
-			"id": 3,
-			"latitude": 28.6024025,
-			"longitude": -81.1983187,
-			"name": "HPA Garden",
-			"description": "Metal tree sculptures at HPA1 and HPA2"
-		},
-		{
-			"id": 4,
-			"latitude": 28.6010649,
-			"longitude": -81.1984367,
-			"name": "HEC Courtyard",
-			"description": "Harris Engineering Corporation Center courtyard. Increases Intelligence."
-		},
-		{
-			"id": 5,
-			"latitude": 28.5999628,
-			"longitude": -81.199177,
-			"name": "Chemistry Garden",
-			"description": "Chemistry building outdoor seating area. Increases Intelligence."
-		},
-		{
-			"id": 6,
-			"latitude": 28.599275,
-			"longitude": -81.2000303,
-			"name": "Technology Commons Courtyard",
-			"description": "Tech commons outdoor seating area"
-		},
-		{
-			"id": 7,
-			"latitude": 28.6000087,
-			"longitude": -81.2015479,
-			"name": "Reflecting Pond",
-			"description": "Fountain in the heart of UCF's campus"
-		},
-		{
-			"id": 8,
-			"latitude": 28.6008031,
-			"longitude": -81.2012921,
-			"name": "Breezeway",
-			"description": "Breezeway in the John T. Washington Center"
-		},
-		{
-			"id": 9,
-			"latitude": 28.6019874,
-			"longitude": -81.2017714,
-			"name": "Koi Pond",
-			"description": "Pond of koi fish at the Burnette Honors College"
-		},
-		{
-			"id": 10,
-			"latitude": 28.6017075,
-			"longitude": -81.2003076,
-			"name": "Student Union Pegasus",
-			"description": "Don't step on it, or you won't graduate!"
-		},
-		{
-			"id": 11,
-			"latitude": 28.6063886,
-			"longitude": -81.196585,
-			"name": "Tower 4 Courtyard",
-			"description": ""
-		},
-		{
-			"id": 12,
-			"latitude": 28.6063886,
-			"longitude": -81.196585,
-			"name": "Tower 3 Courtyard",
-			"description": ""
-		},
-		{
-			"id": 13,
-			"latitude": 28.6092227,
-			"longitude": -81.1971274,
-			"name": "Tower 2 Courtyard",
-			"description": ""
-		},
-		{
-			"id": 14,
-			"latitude": 28.6076923,
-			"longitude": -81.1979071,
-			"name": "Tower 1 Courtyard",
-			"description": ""
-		},
-		{
-			"id": 15,
-			"latitude": 28.6066893,
-			"longitude": -81.1977586,
-			"name": "Knights Plaza Pegasus",
-			"description": "The largest pegasus on UCF's campus outside the CFE Arena"
-		},
-		{
-			"id": 16,
-			"latitude": 28.5993974,
-			"longitude": -81.2036442,
-			"name": "Teaching Academy Sculpture",
-			"description": "Sculpture 'Enlightenment' at the UCF Teaching Academy"
-		},
-		{
-			"id": 17,
-			"latitude": 28.5985749,
-			"longitude": -81.202239,
-			"name": "Charles Millican Statue",
-			"description": "Statue of UCF's founder at Millican Hall"
-		},
-		{
-			"id": 18,
-			"latitude": 28.5992637,
-			"longitude": -81.1993143,
-			"name": "Concrete Park",
-			"description": "Small park at UCF's Counseling Center"
-		},
-		{
-			"id": 19,
-			"latitude": 28.5993666,
-			"longitude": -81.1998249,
-			"name": "Foucault Pendulum",
-			"description": "A tall pendulum in the Mathematical Sciences Building"
-		},
-		{
-			"id": 20,
-			"latitude": 28.6068141,
-			"longitude": -81.2030316,
-			"name": "Lake Claire Dock",
-			"description": "A dock in the Lake Claire recreational area"
-		},
-		{
-			"id": 21,
-			"latitude": 28.608252,
-			"longitude": -81.1948209,
-			"name": "Stadium Flagpole",
-			"description": "Flagpole at Spectrum Stadium"
-		},
-		{
-			"id": 22,
-			"latitude": 28.609700,
-			"longitude": -81.195701,
-			"name": "Jay Bergman Baseball Field",
-			"description": "Baseball field at UCF"
-		},
-		{
-			"id": 23,
-			"latitude": 28.603632,
-			"longitude": -81.200476,
-			"name": "Classroom Building Seating Area",
-			"description": "CB1 seating area"
-		},
-		{
-			"id": 24,
-			"latitude": 28.60784,
-			"longitude": -81.197406,
-			"name": "Ticket Center",
-			"description": "Ticket Center at Knights Plaza"
-		},
-		{
-			"id": 0,
-			"latitude": 0.000000,
-			"longitude": 0.000000,
-			"name": "",
-			"description": ""
-		},
-
-
-	]
+  {
+    "id": 0,
+    "latitude": 28.602228,
+    "longitude": -81.193998,
+    "name": "Timothy R. Newman Nature Pavilion",
+    "description": "Pavilion at UCF Arboretum.Increases Strength.",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 1,
+    "latitude": 28.603567,
+    "longitude": -81.19945,
+    "name": "Memory Mall",
+    "description": "Veteran's memorial at UCF's Memory Mall",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 2,
+    "latitude": 28.6024025,
+    "longitude": -81.1983187,
+    "name": "HPA Garden",
+    "description": "Metal tree sculptures at HPA1 and HPA2",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 3,
+    "latitude": 28.6010649,
+    "longitude": -81.1984367,
+    "name": "HEC Courtyard",
+    "description": "Harris Engineering Corporation Center courtyard. Increases Intelligence.",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 4,
+    "latitude": 28.5999628,
+    "longitude": -81.199177,
+    "name": "Chemistry Garden",
+    "description": "Chemistry building outdoor seating area. Increases Intelligence.",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 5,
+    "latitude": 28.599275,
+    "longitude": -81.2000303,
+    "name": "Technology Commons Courtyard",
+    "description": "Tech commons outdoor seating area",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 6,
+    "latitude": 28.6000087,
+    "longitude": -81.2015479,
+    "name": "Reflecting Pond",
+    "description": "Fountain in the heart of UCF's campus",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 7,
+    "latitude": 28.6008031,
+    "longitude": -81.2012921,
+    "name": "Breezeway",
+    "description": "Breezeway in the John T. Washington Center",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 8,
+    "latitude": 28.6019874,
+    "longitude": -81.2017714,
+    "name": "Koi Pond",
+    "description": "Pond of koi fish at the Burnette Honors College",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 9,
+    "latitude": 28.6017075,
+    "longitude": -81.2003076,
+    "name": "Student Union Pegasus",
+    "description": "Don't step on it, or you won't graduate!",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 10,
+    "latitude": 28.6063886,
+    "longitude": -81.196585,
+    "name": "Tower 4 Courtyard",
+    "description": "",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 11,
+    "latitude": 28.6063886,
+    "longitude": -81.196585,
+    "name": "Tower 3 Courtyard",
+    "description": "",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 12,
+    "latitude": 28.6092227,
+    "longitude": -81.1971274,
+    "name": "Tower 2 Courtyard",
+    "description": "",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 13,
+    "latitude": 28.6076923,
+    "longitude": -81.1979071,
+    "name": "Tower 1 Courtyard",
+    "description": "",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 14,
+    "latitude": 28.6066893,
+    "longitude": -81.1977586,
+    "name": "Knights Plaza Pegasus",
+    "description": "The largest pegasus on UCF's campus outside the CFE Arena",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 15,
+    "latitude": 28.5993974,
+    "longitude": -81.2036442,
+    "name": "Teaching Academy Sculpture",
+    "description": "Sculpture 'Enlightenment' at the UCF Teaching Academy",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 16,
+    "latitude": 28.5985749,
+    "longitude": -81.202239,
+    "name": "Charles Millican Statue",
+    "description": "Statue of UCF's founder at Millican Hall",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 17,
+    "latitude": 28.5992637,
+    "longitude": -81.1993143,
+    "name": "Concrete Park",
+    "description": "Small park at UCF's Counseling Center",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 18,
+    "latitude": 28.5993666,
+    "longitude": -81.1998249,
+    "name": "Foucault Pendulum",
+    "description": "A tall pendulum in the Mathematical Sciences Building",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 19,
+    "latitude": 28.6068141,
+    "longitude": -81.2030316,
+    "name": "Lake Claire Dock",
+    "description": "A dock in the Lake Claire recreational area",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 20,
+    "latitude": 28.608252,
+    "longitude": -81.1948209,
+    "name": "Stadium Flagpole",
+    "description": "Flagpole at Spectrum Stadium",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 21,
+    "latitude": 28.6097,
+    "longitude": -81.195701,
+    "name": "Jay Bergman Baseball Field",
+    "description": "Baseball field at UCF",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 22,
+    "latitude": 28.603632,
+    "longitude": -81.200476,
+    "name": "Classroom Building Seating Area",
+    "description": "CB1 seating area",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 23,
+    "latitude": 28.60784,
+    "longitude": -81.197406,
+    "name": "Ticket Center",
+    "description": "Ticket Center at Knights Plaza",
+    "timeSinceVisited": 0
+  }
+]
