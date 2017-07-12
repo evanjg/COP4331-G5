@@ -15,7 +15,7 @@ public class MapController : MonoBehaviour
     public static RectD ReferenceTileRect { get; set; }
     public static float WorldScaleFactor { get; set; }
 
-    public MapVisualization MapVisualization;
+    public MapVisualization mapVisualization;
     public float TileSize = 100;
 
     [SerializeField]
@@ -47,7 +47,7 @@ public class MapController : MonoBehaviour
     /// </summary>
     public void Awake()
     {
-        MapVisualization.Initialize(MapboxAccess.Instance);
+        mapVisualization.Initialize(MapboxAccess.Instance);
         tiles = new Dictionary<Vector2, UnityTile>();
     }
 
@@ -122,7 +122,7 @@ public class MapController : MonoBehaviour
             tile.Rect = Conversions.TileBounds(tile.TileCoordinate, zoom);
             tile.RelativeScale = Conversions.GetTileScaleInMeters(0, Zoom) / Conversions.GetTileScaleInMeters((float)Conversions.MetersToLatLon(tile.Rect.Center).x, Zoom);
             tile.transform.localPosition = new Vector3((float)(tile.Rect.Center.x - ReferenceTileRect.Center.x), 0, (float)(tile.Rect.Center.y - ReferenceTileRect.Center.y));
-            MapVisualization.ShowTile(tile);
+            mapVisualization.ShowTile(tile);
 			Debug.Log ("Tile count: " + ++count);
         }
     }

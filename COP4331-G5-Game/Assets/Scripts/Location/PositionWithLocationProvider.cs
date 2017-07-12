@@ -79,7 +79,7 @@ public class PositionWithLocationProvider : MonoBehaviour
             return;
         }
 
-		t.text = count.ToString();
+		//t.text = count.ToString();
 	    count++;
 
         targetPosition = Conversions.GeoToWorldPosition(e.Location,

@@ -15,7 +15,7 @@ public class MapUpdateFOV : MonoBehaviour
     private Camera camera;
 
     [SerializeField]
-    private int range = 1;
+    private int range = 2;
 
     Ray ray;
     float hitDistance;

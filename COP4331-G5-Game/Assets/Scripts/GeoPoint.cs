@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Configuration;
 using Mapbox.Utils;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace AssemblyCSharp
 		public double longitude;
 		public string name;
 		public string description;
+	    public int timeSinceVisited = 0;
 
 		public GeoPoint ()
 		{

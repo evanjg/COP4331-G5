@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move : MonoBehaviour {
+public class Move : MonoBehaviour {
 
 	public float speed = 6.0F;
 	public float gravity = 20.0F;
@@ -16,6 +16,8 @@ public class move : MonoBehaviour {
 	public CharacterController controller;
 	public Compass compass = new Compass();
 	GameObject player;
+
+    public GameObject prefab;
 
 	void Start(){
 		
@@ -48,6 +50,10 @@ public class move : MonoBehaviour {
 			player.transform.Rotate (0, TurnSpeed*Time.deltaTime , 0);
 		}
 
+	    if (Input.GetKeyDown(KeyCode.H))
+	    {
+	        Instantiate(prefab, controller.transform.position + new Vector3(5,5,0), Quaternion.identity);
+	    }
 
 		// Move Character Controller
 		if(moveDirection.magnitude > 0.001)

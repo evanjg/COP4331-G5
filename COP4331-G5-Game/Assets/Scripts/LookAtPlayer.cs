@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VR;
+
 public class LookAtPlayer : MonoBehaviour {
 
 	public GameObject target;
@@ -90,7 +93,50 @@ public class LookAtPlayer : MonoBehaviour {
                 transform.position = target.transform.position - (rotation * new Vector3(offset.x,dis,offset.z));
             }
         }
-       
+
+
+        // In editor
+        if (Input.GetKey(KeyCode.O) && transform.position.y < 100)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+        }
+        else if (Input.GetKey(KeyCode.P) && transform.position.y > 12)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - 3, transform.position.z);
+        }
+
+
+        // Unity Editor Test Only ****
+        float dis1 = target.transform.position.y - transform.position.y;
+
+        float currentAngle1 = transform.eulerAngles.y;
+        float desiredAngle1 = currentAngle1;
+
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.Rotate(0, 10* Time.deltaTime, 0);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.Rotate(0, -10 * Time.deltaTime, 0);
+
+        }
+
+        desiredAngle1 = transform.eulerAngles.y;
+
+
+        float angle1 = Mathf.LerpAngle(currentAngle1, desiredAngle1, Time.deltaTime * 5000);
+
+        if (!(desiredAngle1 == currentAngle1))
+        {
+            Quaternion rotation = Quaternion.Euler(0, angle1, 0);
+
+            transform.position = target.transform.position - (rotation * new Vector3(offset.x, dis1, offset.z));
+        }
+        // *******
+
+
         transform.LookAt(target.transform);
 	}
 }
