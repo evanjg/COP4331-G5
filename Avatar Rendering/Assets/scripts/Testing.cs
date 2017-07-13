@@ -183,14 +183,14 @@ public class Testing : MonoBehaviour {
         while (level_num.stats.current != 11)
         {
 
-            for (float i = 0; i <= 100; i += 25)
+            for (float i = 0; i <= 100f * level_num.stats.current; i += 25)
             {
                 yield return new WaitForSeconds(0.5f); // 1 second wait time
 
                 heals_num.stats.increase();
                 heals_num.showTextnum.text = heals_num.stats.current.ToString();
             }
-            for (float i = 0; i <= 100; i += 25)
+            for (float i = 0; i <= 100f * level_num.stats.current; i += 25)
             {
                 yield return new WaitForSeconds(0.5f); // 1 second wait time
 
@@ -198,7 +198,7 @@ public class Testing : MonoBehaviour {
                 strengths_num.showTextnum.text = strengths_num.stats.current.ToString();
 
             }
-            for (float i = 0; i <= 100; i += 25)
+            for (float i = 0; i <= 100f * level_num.stats.current; i += 25)
             {
                 yield return new WaitForSeconds(0.5f); // 1 second wait time
 
@@ -207,7 +207,7 @@ public class Testing : MonoBehaviour {
 
             }
 
-            if (((heals_num.stats.current) == 100) && ((strengths_num.stats.current == 100)) && ((feels_num.stats.current == 100)))
+            if (((heals_num.stats.current) == 100f* level_num.stats.current) && ((strengths_num.stats.current == 100f * level_num.stats.current)) && ((feels_num.stats.current == 100f * level_num.stats.current)))
             {
                 heals_num.stats.current = 0;
                 heals_num.showTextnum.text = heals_num.stats.current.ToString();
@@ -216,6 +216,7 @@ public class Testing : MonoBehaviour {
                 feels_num.stats.current = 0;
                 feels_num.showTextnum.text = feels_num.stats.current.ToString();
 
+                
 
                 if (level_num.stats.current == 10)
                 { break;  }
@@ -223,7 +224,10 @@ public class Testing : MonoBehaviour {
                 level_num.stats.increase();
                 level_num.showTextnum.text = level_num.stats.current.ToString();
 
-                
+                // increaseing the max for each stat
+                heals_num.stats.max = 100f * level_num.stats.current;
+                strengths_num.stats.max = 100f * level_num.stats.current;
+                feels_num.stats.max =  100f * level_num.stats.current;
   
                 
 
