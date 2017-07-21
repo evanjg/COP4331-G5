@@ -1,180 +1,90 @@
 ﻿// code brought to you by Nashaly
-// sprint 2 
-// 6/30/2013
+// sprint 3 (updated)
+// 7/21/2017
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Testing : MonoBehaviour {
 
-    public number feels_num;
-    public number heals_num;
-    public number strengths_num;
-    public number level_num;
+    // creating the test varibles 
+    public Number feels_num;
+    public Number heals_num;
+    public Number strengths_num;
+    public Number level_num;
 
-	// Use this for initialization
-	void Start ()
+    public bool running;
+
+   
+    // Use this for initialization
+    void Start ()
     {
-        StartCoroutine(testing()); // runs when start is done 
+        running = false;
+        StartCoroutine(testing());  
 	}
 
+    // increment the object indicated
+    IEnumerator incThething(Number num, float  min,  float max, float inc)
+    {
+        running = true;
 
+        //creating with whats given 
+        num.stats = new Stats(num.nameofStat.ToString(), min, max, inc);
+        num.showTextnum.text = num.stats.current.ToString(); 
+        
+        // test if num can go from min- max
+        for (float i = min; i <= max; i += inc)
+        {
+            yield return new WaitForSeconds(0.05f); // 1 second wait time
 
+            num.stats.increase();
+            num.showTextnum.text = num.stats.current.ToString();
+
+        }
+        if (num.stats.current == max)
+        {
+            print(" passed");
+            //return true;
+        }
+
+        // resetting current
+        num.stats.current = min;
+        num.showTextnum.text = num.stats.current.ToString();
+
+       // StopAllCoroutines();
+       running = false;
+        StopCoroutine("incThething");
+    }
+
+    // the test code
+    // for automatic testing 
     IEnumerator testing() // needed for StartCoroutine
     {
         int count = 0;// count number of passses 
-        // for automatic testing 
-        // for testing perposes min, max, increment valuse for all stats will be min=0, max=100 , increment=20;
-        print("starting test: 6 passes are required");
+               
+        print("starting test: ");
 
-        heals_num.stats = new Stats(heals_num.nameofStat.ToString(), 0, 100, 25);
-        heals_num.showTextnum.text = heals_num.stats.current.ToString();
+        // test if all three stats can go from 0-100 at same time
 
+        StartCoroutine(incThething(heals_num, 0, 100, 1));
 
-        // test if health can go from 0- 100 
-        for (float i=0; i <= 100; i+= 25)
-         {
-            yield return new WaitForSeconds(0.5f); // 1 second wait time
-            
-            heals_num.stats.increase();
-            heals_num.showTextnum.text = heals_num.stats.current.ToString();
+        if (running == true) yield return new WaitForSeconds(8);
 
-        }
-        if (heals_num.stats.current == 100)
-        {
-            print("1. passed");
-            count++;
-        }
-        else
-        {
-            print("1. failed");
-        }
-        // resetting health
-        heals_num.stats.current = 0;
-        heals_num.showTextnum.text = heals_num.stats.current.ToString();
+        StartCoroutine(incThething(strengths_num, 0, 100, 1));
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        if (running == true) yield return new WaitForSeconds(8);
+        StartCoroutine(incThething(feels_num, 0, 100, 1));
 
-        // test if strength can go from 0-100 
+        if (running == true) yield return new WaitForSeconds(8);
+        StartCoroutine(incThething(level_num, 1, 10, 1));
 
-        strengths_num.stats = new Stats(strengths_num.nameofStat.ToString(), 0, 100, 25);
-        strengths_num.showTextnum.text = strengths_num.stats.current.ToString();
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //buffer to wait
+        if (running == true) yield return new WaitForSeconds(8);
 
-        // test if health can go from 0- 100 
-        for (float i = 0; i <= 100; i += 25)
-        {
-            yield return new WaitForSeconds(0.5f); // 1 second wait time
-
-            strengths_num.stats.increase();
-            strengths_num.showTextnum.text = strengths_num.stats.current.ToString();
-
-        }
-        if (strengths_num.stats.current == 100)
-        {
-            print("2. passed");
-            count++;
-        }
-        else
-        {
-            print("2. failed");
-        }
-        // resetting  strengths
-        strengths_num.stats.current = 0;
-        strengths_num.showTextnum.text = heals_num.stats.current.ToString();
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        // test if feels can go from 0-100 
-
-        feels_num.stats = new Stats(feels_num.nameofStat.ToString(), 0, 100, 25);
-        feels_num.showTextnum.text = feels_num.stats.current.ToString();
-
-  
-        for (float i = 0; i <= 100; i += 25)
-        {
-            yield return new WaitForSeconds(0.5f); // 1 second wait time
-
-            feels_num.stats.increase();
-            feels_num.showTextnum.text = feels_num.stats.current.ToString();
-
-        }
-        if (feels_num.stats.current == 100)
-        {
-            print("3. passed");
-            count++;
-        }
-        else
-        {
-            print("3. failed");
-        }
-        // resetting  strengths
-        feels_num.stats.current = 0;
-        feels_num.showTextnum.text = feels_num.stats.current.ToString();
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // test if level can go from 1-10 
-
-        level_num.stats = new Stats(level_num.nameofStat.ToString(),1, 10, 1);
-        level_num.showTextnum.text = level_num.stats.current.ToString();
-
-        // test if level can go from 0- 10
-        for (float i = 0; i <= 10; i += 1)
-        {
-            yield return new WaitForSeconds(0.5f); // 1 second wait time
-
-            level_num.stats.increase();
-            level_num.showTextnum.text = level_num.stats.current.ToString();
-
-        }
-        if (level_num.stats.current == 10)
-        {
-            print("4. passed");
-            count++;
-        }
-        else
-        {
-            print("4. failed");
-        }
-        // resetting  strengths
-        level_num.stats.current = 1;
-        level_num.showTextnum.text = level_num.stats.current.ToString();
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        // test if all three stats can go from 0-100 at same time 
-        // test if feels can go from 0-100 
-
-        for (float i = 0; i <= 100; i += 25)
-        {
-            
-
-            feels_num.stats.increase();
-            feels_num.showTextnum.text = feels_num.stats.current.ToString();
-
-            heals_num.stats.increase();
-            heals_num.showTextnum.text = heals_num.stats.current.ToString();
-
-            strengths_num.stats.increase();
-            strengths_num.showTextnum.text = strengths_num.stats.current.ToString();
-         
-        yield return new WaitForSeconds(0.5f); // 1 second wait time
-        }
-
-        if (((heals_num.stats.current) == 100) && ((strengths_num.stats.current == 100)) && ((feels_num.stats.current == 100)))
-        {
-            print("5. passed");
-            count++;
-        }
-        else
-        {
-            print("5. failed");
-        }
-
-        heals_num.stats.current = 0;
-        heals_num.showTextnum.text = heals_num.stats.current.ToString();
-        strengths_num.stats.current = 0;
-        strengths_num.showTextnum.text = strengths_num.stats.current.ToString();
-        feels_num.stats.current = 0;
-        feels_num.showTextnum.text = feels_num.stats.current.ToString();
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
         // test to see stats that have reached 100 can wait for other stats to level up 
@@ -183,24 +93,24 @@ public class Testing : MonoBehaviour {
         while (level_num.stats.current != 11)
         {
 
-            for (float i = 0; i <= 100f * level_num.stats.current; i += 25)
+            for (float i = 0; i <= 100f * level_num.stats.current; i += 1)
             {
-                yield return new WaitForSeconds(0.5f); // 1 second wait time
+                yield return new WaitForSeconds(0.0005f); //  second wait time
 
                 heals_num.stats.increase();
                 heals_num.showTextnum.text = heals_num.stats.current.ToString();
             }
-            for (float i = 0; i <= 100f * level_num.stats.current; i += 25)
+            for (float i = 0; i <= 100f * level_num.stats.current; i += 1)
             {
-                yield return new WaitForSeconds(0.5f); // 1 second wait time
+                yield return new WaitForSeconds(0.0005f); //  second wait time
 
                 strengths_num.stats.increase();
                 strengths_num.showTextnum.text = strengths_num.stats.current.ToString();
 
             }
-            for (float i = 0; i <= 100f * level_num.stats.current; i += 25)
+            for (float i = 0; i <= 100f * level_num.stats.current; i += 1)
             {
-                yield return new WaitForSeconds(0.5f); // 1 second wait time
+                yield return new WaitForSeconds(0.0005f); //  second wait time
 
                 feels_num.stats.increase();
                 feels_num.showTextnum.text = feels_num.stats.current.ToString();
@@ -228,18 +138,15 @@ public class Testing : MonoBehaviour {
                 heals_num.stats.max = 100f * level_num.stats.current;
                 strengths_num.stats.max = 100f * level_num.stats.current;
                 feels_num.stats.max =  100f * level_num.stats.current;
-  
-                
-
-            }
+              }
         }
 
         if (level_num.stats.current >= 10)
         {
-            print("6.passed");
+            print("passed");
             count++;
         }
-        else print("FAIL");
+  
 
         heals_num.stats.current = 0;
         heals_num.showTextnum.text = heals_num.stats.current.ToString();
@@ -249,15 +156,8 @@ public class Testing : MonoBehaviour {
         feels_num.showTextnum.text = feels_num.stats.current.ToString();
         level_num.stats.current = 1;
         level_num.showTextnum.text = level_num.stats.current.ToString();
-
-        if(count==6)
-        {
-            print("all passed!!");
-        }
-        else
-        {
-            print("there was a problem");
-        }
+        
+    }
 
         // for manual testing method with key pressing comment out test() and uncomment Update
         // key: a to increment heals
@@ -268,9 +168,6 @@ public class Testing : MonoBehaviour {
         // key c to decrement strength 
         // once all stats reach 100 level will increment and all stats will restart to min.
         // key q will decrement level
-    }
-
-
     // Update is called once per frame
     /*
     void Update ()
