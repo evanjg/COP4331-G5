@@ -16,6 +16,7 @@ Table of Contents
 - Burndown Chart
 	- Sprint 1
 	- Sprint 2: [Here](https://docs.google.com/spreadsheets/d/14aCt_85m_IYro8MSVO_v5emIZ8gx5-_X2jk40dGsW-g/edit?usp=sharing)
+	- Sprint 3: [Here](https://docs.google.com/spreadsheets/d/14aCt_85m_IYro8MSVO_v5emIZ8gx5-_X2jk40dGsW-g/edit?usp=sharing)
 - GameDesignIdeas
 - UserStories
 - VisionStatement
@@ -40,3 +41,8 @@ Current Status
 - Stats and Level System (Sprint 2 Update)
 - Inventory System (Sprint 2 Update)
 - Add new POI changes to this one: https://github.com/evanjg/COP4331-G5/blob/master/COP4331-G5-Game/Assets/Scripts/poi.json
+- Unboxing Minigame to obtain potentially more items from a single box (Sprint 3 update)
+- UI elements to display player stats (Sprint 3 update)
+- Various art assets added to the game (Sprint 3 update)
+- Player data saved between app opening/closiing (Sprint 3 update)
+
