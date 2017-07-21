@@ -44,5 +44,5 @@ Current Status
 - Unboxing Minigame to obtain potentially more items from a single box (Sprint 3 update)
 - UI elements to display player stats (Sprint 3 update)
 - Various art assets added to the game (Sprint 3 update)
-- Player data saved between app opening/closiing (Sprint 3 update)
+- Player data saved between app opening/closing (Sprint 3 update)
 
