@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 
+[Serializable]
 public class Inventory {
 	public int slotCount;
 	public ItemSlot[] slots;
@@ -76,7 +77,7 @@ public class Inventory {
 		int itemsAdded = 0;
 		for (int i = 0; i < slots.Length; i++) {
 			ItemSlot slot = slots[i];
-			if (slot.IsEmpty() || slot.HasItem(item)) {
+			if (slot.HasItem(item)) {
 				int itemsToAdd = Math.Min(count, item.stackLimit - slot.count);
 				slot.SetValues(slot.count + itemsToAdd, item, slot.data);
 				count -= itemsToAdd;
@@ -84,7 +85,25 @@ public class Inventory {
 					break;
 			}
 		}
+		if (count > 0) {
+			for (int i = 0; i < slots.Length; i++) {
+				ItemSlot slot = slots[i];
+				if (slot.IsEmpty()) {
+					int itemsToAdd = Math.Min(count, item.stackLimit - slot.count);
+					slot.SetValues(slot.count + itemsToAdd, item, slot.data);
+					count -= itemsToAdd;
+					if (count == 0)
+						break;
+				}
+			}
+		}
 		return itemsAdded;
+	}
+
+	public void GiveItems(ItemCount[] items) {
+		foreach (ItemCount itemCount in items) {
+			AddItem(itemCount.count, itemCount.item);
+		}
 	}
 
 	// TODO: Don't repeat myself and use some ItemSlotFilter delegate

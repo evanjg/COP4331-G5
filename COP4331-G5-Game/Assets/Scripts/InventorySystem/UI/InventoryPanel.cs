@@ -1,15 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class InventoryPanel : MonoBehaviour {
 	public Backpack backpack;
 	private Inventory inventory;
-	private ItemSlotPanel[] itemSlotPanels;
+	public ItemSlotPanel[] itemSlotPanels;
 
 	public ItemSlotPanel itemSlotPanelPrefab;
 
+	public UnityEvent onInventoryInitialized = new UnityEvent();
+
 	void Start () {
-		SetInventory(backpack.inventory);
+		if (backpack != null) SetInventory(backpack.inventory);
+		if (Player.instance.playerData.inventory != null) {
+			SetInventory(Player.instance.playerData.inventory);
+		} else {
+			Debug.Log("No inventory");
+			Player.instance.playerData.onLoaded.AddListener(() => {
+				Debug.Log("Okay it was loaded");
+				SetInventory(Player.instance.playerData.inventory);
+			});
+		}
 	}
 
 	public void SetInventory(Inventory inventory) {
@@ -22,5 +34,6 @@ public class InventoryPanel : MonoBehaviour {
 			panel.SetSlot(inventory.slots[i]);
 			itemSlotPanels[i] = panel;
 		}
+		onInventoryInitialized.Invoke();
 	}
 }
