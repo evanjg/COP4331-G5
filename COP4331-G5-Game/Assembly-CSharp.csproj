@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{7F6AD5B8-EDC1-EA65-1767-2EACA6755ED4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_1;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\ExtensionMethods\Enums.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\ExtensionMethods\VectorTile.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\ExtensionMethods\VectorTileFeature.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\Geometry\DecodeGeometry.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\Geometry\Geometry.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\PbfReader\Constants.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\PbfReader\PbfReader.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\VectorTileReader\VectorTile.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\VectorTileReader\VectorTileFeature.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\VectorTileReader\VectorTileLayer.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\VectorTileReader\VectorTileReader.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\Mapbox\vector-tile-cs\VectorTileReader\clipper.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\BlockType.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\CompressionLevel.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\CompressionMode.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\CompressionTracing.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\CopyEncoder.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\Crc32Helper.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\DeflateInput.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\DeflateStream.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\DeflateStreamAsyncResult.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\DeflaterManaged.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\FastEncoder.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\FastEncoderStatics.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\FastEncoderWindow.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\FileFormats.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\GZipDecoder.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\GZipStream.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\GZipUtils.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\HuffmanTree.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\IDeflater.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\Inflater.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\InflaterState.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\InputBuffer.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\InvalidDataException.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\Match.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\MatchState.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\OutputBuffer.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\OutputWindow.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Mapbox.IO.Compression\SR.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Algorithm\Dwyer.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Algorithm\ITriangulator.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Algorithm\Incremental.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Algorithm\SweepLine.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\BadTriQueue.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Behavior.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Carver.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Data\BadSubseg.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Data\BadTriangle.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Data\Osub.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Data\Otri.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Data\Segment.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Data\Triangle.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Data\Vertex.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Enums.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\BoundingBox.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\Edge.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\EdgeEnumerator.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\ISegment.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\ITriangle.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\InputGeometry.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\Point.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Geometry\RegionPointer.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\DataReader.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\DebugWriter.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\FileReader.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\FileWriter.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\IGeometryFormat.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\IMeshFormat.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\InputTriangle.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\IO\TriangleFormat.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Log\ILog.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Log\ILogItem.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Log\SimpleLog.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Log\SimpleLogItem.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Mesh.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\NewLocation.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Primitives.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Quality.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Sampler.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Smoothing\ISmoother.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Smoothing\SimpleSmoother.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\AdjacencyMatrix.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\BoundedVoronoi.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\CuthillMcKee.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\IVoronoi.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\QuadTree.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\QualityMeasure.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\RegionIterator.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\Statistic.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\Voronoi.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\Tools\VoronoiRegion.cs" />
+     <Compile Include="Assets\Mapbox\Core\Plugins\ThirdParty\Triangle.NET\TriangleLocator.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Constants.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Location\DeviceLocationProvider.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Location\EditorLocationProvider.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Location\ILocationProvider.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Location\LocationProviderFactory.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Location\TransformLocationProvider.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MapboxAccess.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Components\FeatureBehaviour.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Components\TextureSelector.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Data\MeshData.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Data\UnityTile.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Data\VectorFeatureUnity.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Enums\TilePropertyState.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Factories\DirectionsFactory.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Factories\Factory.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Factories\MapImageFactory.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Factories\MeshFactory.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Factories\TerrainFactory.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Filters\FilterBase.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Filters\HeightFilter.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Filters\TypeFilter.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Interfaces\ILabelVisualizationHelper.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Interfaces\LayerVisualizerBase.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\LayerVisualizers\PoiVisualizer.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\LayerVisualizers\VectorLayerVisualizer.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\MapController.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\MapVisualization.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\GameObjectModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\GameObjectModifiers\TextureModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\MergedModifierStack.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\MeshModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\MeshModifiers\ChamferModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\MeshModifiers\HeightModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\MeshModifiers\LineMeshModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\MeshModifiers\PolygonMeshModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\MeshModifiers\UvModifier.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\ModifierBase.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\ModifierStack.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\MeshGeneration\Modifiers\ModifierStackBase.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Utilities\Conversions.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Utilities\GeocodeAttribute.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Utilities\HTTPRequest.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Utilities\Runnable.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Utilities\Singleton.cs" />
+     <Compile Include="Assets\Mapbox\Core\Unity\Utilities\VectorExtensions.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\DirectionResource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Directions.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Overview.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\DirectionsResponse.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Intersection.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Leg.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Maneuver.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Route.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Step.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Waypoint.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\RoutingProfile.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\ForwardGeocodeResource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\GeocodeResource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\Geocoder.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\Response\Feature.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\Response\GeocodeResponse.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\Response\Geometry.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\ReverseGeocodeResource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\CanonicalTileId.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\ClassicRasterTile.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\Map.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\MapUtils.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\RasterTile.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\RawPngRasterTile.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\Tile.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\TileCover.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\TileResource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\UnwrappedTileId.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\VectorTile.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\IAsyncRequest.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\IFileSource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\IResource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\Resource.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\Response.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\BearingFilter.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\Compression.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\Constants.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\GeoCoordinate.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\GeoCoordinateBounds.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\IObservable.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\IObserver.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\JsonConverters\BboxToGeoCoordinateBoundsConverter.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\JsonConverters\JsonConverters.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\JsonConverters\LonLatToGeoCoordinateConverter.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\JsonConverters\PolylineToGeoCoordinateListConverter.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\PolylineUtils.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\Vector2d\Mathd.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\Vector2d\RectD.cs" />
+     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\Vector2d\Vector2d.cs" />
+     <Compile Include="Assets\Scripts\Inventory\BoostItem.cs" />
+     <Compile Include="Assets\Scripts\Inventory\BoxItem.cs" />
+     <Compile Include="Assets\Scripts\Inventory\BoxOpener.cs" />
+     <Compile Include="Assets\Scripts\Inventory\InfoWindow.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\ActiveItems\ActivatableItem.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\ActiveItems\IItemActivator.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\DropTable.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\DropTableEntry.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Inventory.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Item.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\ItemData.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\ItemSlot.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Test\Backpack.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Test\ItemAdder.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Test\ItemCount.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Test\ItemRemover.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\UI\InventoryPanel.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\UI\ItemSlotPanel.cs" />
+     <Compile Include="Assets\Scripts\Location\BuildMapAtLocation.cs" />
+     <Compile Include="Assets\Scripts\Location\PositionWithLocationProvider.cs" />
+     <Compile Include="Assets\Scripts\Map\BoxGiver.cs" />
+     <Compile Include="Assets\Scripts\Map\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Map\Crate.cs" />
+     <Compile Include="Assets\Scripts\Map\GeoPoint.cs" />
+     <Compile Include="Assets\Scripts\Map\GeoPoints.cs" />
+     <Compile Include="Assets\Scripts\Map\Hit.cs" />
+     <Compile Include="Assets\Scripts\Map\LookAtPlayer.cs" />
+     <Compile Include="Assets\Scripts\Map\MapController.cs" />
+     <Compile Include="Assets\Scripts\Map\MapUpdateFOV.cs" />
+     <Compile Include="Assets\Scripts\Map\Pawstop.cs" />
+     <Compile Include="Assets\Scripts\Map\PawstopManager.cs" />
+     <Compile Include="Assets\Scripts\Map\PlayerMove.cs" />
+     <Compile Include="Assets\Scripts\Pets\Pet.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PlayerData.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\Bork.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\IMoveExecutor.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\IMoveValidator.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\Move.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\MoveEvent.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\Peg.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PegCreator.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PegDeleter.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PegEvent.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PegHole.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PegHoleMatrix.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PegRecolor.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PegSolitaireBoard.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PuzzleManager.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\PuzzleSoundManager.cs" />
+     <Compile Include="Assets\Scripts\Puzzle\UI\ScoreDisplay.cs" />
+     <Compile Include="Assets\Scripts\SceneManagement\GoToScene.cs" />
+     <Compile Include="Assets\Scripts\SceneManagement\Reset.cs" />
+     <Compile Include="Assets\Scripts\Stats\Stats.cs" />
+     <Compile Include="Assets\Scripts\Stats\Testing.cs" />
+     <Compile Include="Assets\Scripts\Stats\XPDisplay.cs" />
+     <Compile Include="Assets\Scripts\Stats\number.cs" />
+     <Compile Include="Assets\Scripts\resolution.cs" />
+     <None Include="Assets\Mapbox\Resources\Fonts\OpenSansLic.txt" />
+     <None Include="Assets\Mapbox\README.txt" />
+     <None Include="Assets\GEOPOINTS.txt" />
+     <None Include="Assets\GEOPOINTS_.txt" />
+     <None Include="Assets\Mapbox\Core\Plugins\link.xml" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Users/Evan/Desktop/1_5159103308522061835/COP4331-G5-Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/Evan/Desktop/1_5159103308522061835/COP4331-G5-Game/Assets/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.Json">
+ <HintPath>C:/Users/Evan/Desktop/1_5159103308522061835/COP4331-G5-Game/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil">
+ <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

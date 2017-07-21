@@ -1,3 +1,6 @@
-﻿public class ItemData {
+﻿using System;
+
+[Serializable]
+public class ItemData {
 
 }

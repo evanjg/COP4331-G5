@@ -17,8 +17,8 @@
   },
   {
     "id": 2,
-    "latitude": 28.6024025,
-    "longitude": -81.1983187,
+    "latitude": 28.603097,
+    "longitude": -81.198357,
     "name": "HPA Garden",
     "description": "Metal tree sculptures at HPA1 and HPA2",
     "timeSinceVisited": 0
@@ -49,40 +49,40 @@
   },
   {
     "id": 6,
-    "latitude": 28.6000087,
-    "longitude": -81.2015479,
+    "latitude": 28.59948,
+    "longitude": -81.202069,
     "name": "Reflecting Pond",
     "description": "Fountain in the heart of UCF's campus",
     "timeSinceVisited": 0
   },
   {
     "id": 7,
-    "latitude": 28.6008031,
-    "longitude": -81.2012921,
+    "latitude": 28.601124,
+    "longitude": -81.201636,
     "name": "Breezeway",
     "description": "Breezeway in the John T. Washington Center",
     "timeSinceVisited": 0
   },
   {
     "id": 8,
-    "latitude": 28.6019874,
-    "longitude": -81.2017714,
+    "latitude": 28.602167,
+    "longitude": -81.20169,
     "name": "Koi Pond",
     "description": "Pond of koi fish at the Burnette Honors College",
     "timeSinceVisited": 0
   },
   {
     "id": 9,
-    "latitude": 28.6017075,
-    "longitude": -81.2003076,
+    "latitude": 28.60196,
+    "longitude": -81.200319,
     "name": "Student Union Pegasus",
     "description": "Don't step on it, or you won't graduate!",
     "timeSinceVisited": 0
   },
   {
     "id": 10,
-    "latitude": 28.6063886,
-    "longitude": -81.196585,
+    "latitude": 28.605854,
+    "longitude": -81.195781,
     "name": "Tower 4 Courtyard",
     "description": "",
     "timeSinceVisited": 0
@@ -189,6 +189,14 @@
     "longitude": -81.197406,
     "name": "Ticket Center",
     "description": "Ticket Center at Knights Plaza",
+    "timeSinceVisited": 0
+  },
+  {
+    "id": 24,
+    "latitude": 28.607559,
+    "longitude": -81.198208,
+    "name": "Couch",
+    "description": "Hyenas sleep on this couch",
     "timeSinceVisited": 0
   }
 ]
