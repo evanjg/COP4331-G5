@@ -42,7 +42,7 @@ public class BuildMapAtLocation : MonoBehaviour
 		mapController.currentLong = e.Location.y;
 
 		mapController.enabled = true;
-		if (!(mapController.currentLat == 0 && mapController.currentLong == 0) && !isCorrectLocation) {
+		if (!(mapController.currentLat == 0 && mapController.currentLong == 0) && !isCorrectLocation ) {
 			mapController.Execute (mapController.currentLat, mapController.currentLong, mapController.Zoom, mapController.Range);
 			isCorrectLocation = true;
 		}

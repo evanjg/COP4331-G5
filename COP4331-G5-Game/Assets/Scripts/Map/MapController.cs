@@ -64,6 +64,13 @@ public class MapController : MonoBehaviour
     // Initial Map Setup
     public void Execute(double lat, double lng, int zoom, Vector4 frame)
     {
+        GameObject r = GameObject.Find("worldRoot");
+
+        if (r!=null)
+        {
+            root = r;
+            return;
+        }
         //frame goes left-top-right-bottom here
         if (root != null)
         {
@@ -74,6 +81,8 @@ public class MapController : MonoBehaviour
         }
 
         root = new GameObject("worldRoot");
+        
+        DontDestroyOnLoad(root);
 
         var v2 = Conversions.GeoToWorldPosition(lat, lng, new Vector2d(0, 0));
         var tms = Conversions.MetersToTile(v2, zoom);

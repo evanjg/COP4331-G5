@@ -59,7 +59,7 @@
      <None Include="Assets\GEOPOINTS_.txt" />
      <None Include="Assets\Mapbox\Core\Plugins\link.xml" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Evan/Desktop/1_5159103308522061835/COP4331-G5-Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/Evan/Documents/GitHub/COP4331-G5/COP4331-G5-Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -146,10 +146,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/Evan/Desktop/1_5159103308522061835/COP4331-G5-Game/Assets/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/Evan/Documents/GitHub/COP4331-G5/COP4331-G5-Game/Assets/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Mapbox.Json">
- <HintPath>C:/Users/Evan/Desktop/1_5159103308522061835/COP4331-G5-Game/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+ <HintPath>C:/Users/Evan/Documents/GitHub/COP4331-G5/COP4331-G5-Game/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

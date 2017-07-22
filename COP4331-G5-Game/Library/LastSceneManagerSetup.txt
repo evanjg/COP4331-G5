@@ -8,6 +8,9 @@ sceneSetups:
 - path: Assets/Scenes/inventory.unity
   isLoaded: 1
   isActive: 0
+- path: Assets/Scenes/map.unity
+  isLoaded: 1
+  isActive: 0
 - path: Assets/Scenes/puzzle.unity
   isLoaded: 1
   isActive: 0
