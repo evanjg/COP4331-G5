@@ -1,6 +1,6 @@
 ﻿// code brought to you by Nashaly
-// sprint 2 
-// 6/30/2013
+// sprint 3 (updated)
+// 7/21/2017
 
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ public class Stats
 
         
 
-    public float increase() // increasing the stats/level
+    public float increase(float inc = 0) // increasing the stats/level
     {
         if (current >= max) 
         {
@@ -43,7 +43,13 @@ public class Stats
         }
         else
         {
-            current = current + increment;
+            if (inc <= 0)
+            {
+                inc = increment;
+            }
+                current = current + inc;
+            
+            
              return current; 
         }
      

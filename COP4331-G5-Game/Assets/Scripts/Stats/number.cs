@@ -1,13 +1,13 @@
 ﻿// code brought to you by Nashaly
-// sprint 2 
-// 6/30/2013
+// sprint 3 
+// 7/21/2017
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class number : MonoBehaviour {
+public class Number : MonoBehaviour {
 
 
         

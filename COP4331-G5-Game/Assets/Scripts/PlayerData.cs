@@ -94,6 +94,7 @@ public class PlayerData {
 
 	public void CopyDataFrom(PlayerData other) {
 		this.experience = other.experience;
+		UpdateStats();
 		this.inventory = other.inventory;
 	}
 

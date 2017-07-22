@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Mapbox.Unity.MeshGeneration.Data;
@@ -49,6 +50,7 @@ public class MapController : MonoBehaviour
     {
         mapVisualization.Initialize(MapboxAccess.Instance);
         tiles = new Dictionary<Vector2, UnityTile>();
+        
     }
 
     public void Start()
@@ -64,13 +66,36 @@ public class MapController : MonoBehaviour
     // Initial Map Setup
     public void Execute(double lat, double lng, int zoom, Vector4 frame)
     {
-        GameObject r = GameObject.Find("worldRoot");
+        GameObject tempRoot = GameObject.Find("worldRoot");
 
-        if (r!=null)
+        if (tempRoot!=null)
         {
-            root = r;
+            root = tempRoot;
+
+            UnityTile[] childs = root.GetComponentsInChildren<UnityTile>();
+
+			foreach (UnityTile child in childs)
+            {
+			    int x =  Int32.Parse(child.ToString().Substring(7,5));
+                int y = Int32.Parse(child.ToString().Substring(15, 5));
+
+                if (tiles.ContainsKey(new Vector2(x, y)))
+                    continue;
+
+                var tile = new GameObject("Tile - " + x + " | " + y).AddComponent<UnityTile>();
+                tiles.Add(new Vector2(x, y), tile);
+                tile.transform.SetParent(root.transform, false);
+                tile.Zoom = zoom;
+                tile.TileCoordinate = new Vector2(x, y);
+                tile.Rect = Conversions.TileBounds(tile.TileCoordinate, zoom);
+                tile.RelativeScale = Conversions.GetTileScaleInMeters(0, Zoom) / Conversions.GetTileScaleInMeters((float)Conversions.MetersToLatLon(tile.Rect.Center).x, Zoom);
+                tile.transform.localPosition = new Vector3((float)(tile.Rect.Center.x - ReferenceTileRect.Center.x), 0, (float)(tile.Rect.Center.y - ReferenceTileRect.Center.y));
+                 
+			}
+
             return;
         }
+
         //frame goes left-top-right-bottom here
         if (root != null)
         {
@@ -79,7 +104,7 @@ public class MapController : MonoBehaviour
                 Destroy(t.gameObject);
             }
         }
-
+        
         root = new GameObject("worldRoot");
         
         DontDestroyOnLoad(root);
@@ -120,7 +145,6 @@ public class MapController : MonoBehaviour
     /// <param name="zoom">Zoom/Detail level of the requested tile</param>
     public void Request(Vector2 pos, int zoom)
     {
-		
 		if (!tiles.ContainsKey(pos) && (count < MaxTile))
         {
             var tile = new GameObject("Tile - " + pos.x + " | " + pos.y).AddComponent<UnityTile>();
@@ -132,7 +156,8 @@ public class MapController : MonoBehaviour
             tile.RelativeScale = Conversions.GetTileScaleInMeters(0, Zoom) / Conversions.GetTileScaleInMeters((float)Conversions.MetersToLatLon(tile.Rect.Center).x, Zoom);
             tile.transform.localPosition = new Vector3((float)(tile.Rect.Center.x - ReferenceTileRect.Center.x), 0, (float)(tile.Rect.Center.y - ReferenceTileRect.Center.y));
             mapVisualization.ShowTile(tile);
-			//Debug.Log ("Tile count: " + ++count);
+			
+			Debug.Log ("Tile count -------->");
         }
     }
 }

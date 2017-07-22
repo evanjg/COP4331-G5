@@ -65,7 +65,7 @@ public class PawstopManager : MonoBehaviour {
 				geoPoint.latitude, geoPoint.longitude,
 				MapController.ReferenceTileRect.Center, MapController.WorldScaleFactor
 			).ToVector3xz();
-            Debug.Log(geoPoint.description + ": " + pawstop.transform.position);
+            
 			pawstop.Setup(geoPoint);
 			pawstop.onBoxCollected.AddListener( () => boxGiver.GiveABox());
 			pawstops.Add(pawstop);
