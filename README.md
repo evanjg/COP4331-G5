@@ -17,9 +17,9 @@ Table of Contents
 	- Sprint 1
 	- Sprint 2: [Here](https://docs.google.com/spreadsheets/d/14aCt_85m_IYro8MSVO_v5emIZ8gx5-_X2jk40dGsW-g/edit?usp=sharing)
 	- Sprint 3: [Here](https://docs.google.com/spreadsheets/d/14aCt_85m_IYro8MSVO_v5emIZ8gx5-_X2jk40dGsW-g/edit?usp=sharing)
-- GameDesignIdeas
-- UserStories
-- VisionStatement
+- GameDesignIdeas/Product backlog [Here](https://docs.google.com/spreadsheets/d/1_PZqT4-MQZvQ6V61KaNS8TiBHbeMEHUiSAaK7QbSS_Q/edit#gid=0) (Linked from google doc)
+- UserStories [Here](https://github.com/evanjg/COP4331-G5/blob/master/UserStories.md) (Linked)
+- VisionStatement [Here](https://github.com/evanjg/COP4331-G5/blob/master/VisionStatement.md) (Linked)
 - Avatar Rendering (Sprint 2 Update)
 - COP4331-G5-Game (Sprint 2 Update)
 - Current Use Case Diagram [Here](https://github.com/evanjg/COP4331-G5/blob/master/usecase.PNG) (Sprint 3 Update)
