@@ -23,7 +23,7 @@ Table of Contents
 - Avatar Rendering (Sprint 2 Update)
 - COP4331-G5-Game (Sprint 2 Update)
 - Current Use Case Diagram [Here](https://github.com/evanjg/COP4331-G5/blob/master/usecase.PNG) (Sprint 3 Update)
-- Current UML Diagram [Here](https://github.com/evanjg/COP4331-G5/blob/master/GameUML.jpg) (Sprint 2 Update) 
+- Current UML Diagram [Here](https://github.com/evanjg/COP4331-G5/blob/master/GameUML.jpg) (Sprint 2 Update)  [Here](https://github.com/evanjg/COP4331-G5/blob/master/UML%20diagram%20for%20level%20stats.PNG) (levelstats_NU)
 - Link to the code: https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts
 - Links to Testing: ["Geo-Fence" Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Unit%20Tests) , [Inventory System Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts/InventorySystem/Test) , [Avatar Rendering Test](https://github.com/evanjg/COP4331-G5/blob/master/Avatar%20Rendering/Assets/scripts/Testing.cs) ,
 [UI Test](https://github.com/evanjg/COP4331-G5/tree/master/Avatar%20Rendering/UI/Assets)
