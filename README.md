@@ -5,14 +5,11 @@
 For students and those in need of organization/motivation to walk around and visit locations on campus, "Paws of Interest" is a mobile ARG that incentivizes visiting various locations and physical movement by connecting an avatar’s well-being.
 Unlike similar applications such as PokemonGo, which also incentivizes players to visit various physical locations, the game, Paws of Interest, provides various animal avatars that each have different benefits and playstyles, creating a more personalized play experience. 
 
--------------------
-For Sprint 2 Demo Videos: https://www.youtube.com/playlist?list=PL6pzVrEKfi_m_qbbruo5mo5YNXqyIHkTR
-
-For Sprint 3 Demo Videos: https://www.youtube.com/playlist?list=PL6pzVrEKfi_lrfvrbe0FxhmCms2a9IkWC
-
 Table of Contents
 ---------------------
-
+- Demo Videos
+	- Sprint 2: https://www.youtube.com/playlist?list=PL6pzVrEKfi_m_qbbruo5mo5YNXqyIHkTR
+	- Sprint 3: https://www.youtube.com/playlist?list=PL6pzVrEKfi_lrfvrbe0FxhmCms2a9IkWC
 - Backlogs
   - Overall 
   - Sprint 1: [Here](https://docs.google.com/spreadsheets/d/1_ks0SIBcz-NtAnQWu2FQHgqJaKArHKn3C7wTRbJz4AM/edit?usp=sharing)
