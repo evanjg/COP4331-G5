@@ -1,5 +1,11 @@
-# COP4331-G5
+# Welcome to Group 5's mobile ARG game, Paws of Interest!
 
+## Vision Statement
+ 
+For students and those in need of organization/motivation to walk around and visit locations on campus, "Paws of Interest" is a mobile ARG that incentivizes visiting various locations and physical movement by connecting an avatar’s well-being.
+Unlike similar applications such as PokemonGo, which also incentivizes players to visit various physical locations, the game, Paws of Interest, provides various animal avatars that each have different benefits and playstyles, creating a more personalized play experience. 
+
+-------------------
 For Sprint 2 Demo Videos: https://www.youtube.com/playlist?list=PL6pzVrEKfi_m_qbbruo5mo5YNXqyIHkTR
 
 For Sprint 3 Demo Videos: https://www.youtube.com/playlist?list=PL6pzVrEKfi_lrfvrbe0FxhmCms2a9IkWC
@@ -28,7 +34,7 @@ Table of Contents
 - Links to Testing: ["Geo-Fence" Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Unit%20Tests) , [Inventory System Test](https://github.com/evanjg/COP4331-G5/tree/master/COP4331-G5-Game/Assets/Scripts/InventorySystem/Test) , [Avatar Rendering Test](https://github.com/evanjg/COP4331-G5/blob/master/Avatar%20Rendering/Assets/scripts/Testing.cs) ,
 [UI Test](https://github.com/evanjg/COP4331-G5/tree/master/Avatar%20Rendering/UI/Assets)
 
-Current Status
+Current Status - (Feature Complete)
 ---------------
 
 - GPS Location 
